@@ -1,0 +1,17 @@
+<%- include('../partials/header') %>
+
+<h1>Lista de Produtos</h1>
+
+<a href="/produtos/novo">Novo Produto</a>
+
+<ul>
+    <% produtos.forEach(p => { %>
+        <li>
+            <%= p.nome %> - R$ <%= p.preco %>
+            <a href="/produtos/editar/<%= p._id %>">Editar</a>
+            <a href="/produtos/excluir/<%= p._id %>">Excluir</a>
+        </li>
+    <% }) %>
+</ul>
+
+<%- include('../partials/footer') %>
